@@ -1,0 +1,13 @@
+server {
+  listen 80;
+  server_name 35.154.133.229;
+  location = /favicon.ico { access_log off; log_not_found off; }
+  location /static/ {
+      root /home/ubuntu/Chatapp_project/Chatapplication/chatapp;
+  }
+  location / {
+      include proxy_params;
+      proxy_pass http://unix:/home/ubuntu/Chatapp_project/Chatapplication/chatapp/chatapp.sock;
+  }
+}
+

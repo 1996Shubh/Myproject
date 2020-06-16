@@ -1,0 +1,10 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/Chatapp_project/Chatapplication/chatapp
+ExecStart=/home/ubuntu/Chatapp_project/Chatapplication/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/Chatapp_project/Chatapplication/chatapp/chatapp.sock chatapp.wsgi:application
+[Install]
+WantedBy=multi-user.target
