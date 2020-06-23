@@ -8,8 +8,8 @@ cd $script_dir/Chatapplication
 virtualenv --python=python3 venv
 source $script_dir/Chatapplication/venv/bin/activate
 cd $script_dir/Chatapplication/chatapp
-pip3 install -r requirements.txt
-pip3 install django bcrypt django-extensions
+pip install -r requirements.txt
+pip install django bcrypt django-extensions
 sudo chown $USER:$USER $script_dir/Chatapplication/chatapp
 cd $script_dir/Chatapplication/chatapp/
 python3 manage.py collectstatic --noinput
